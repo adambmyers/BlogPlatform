@@ -17,18 +17,21 @@
                 </nav>
             </header>    
             <div class="main-content">
-                <ul>
-                    <li><a href="/">Tags</a></li>
-                </ul>
-            </div>
-            <div class="form">
-                <form action="/tags" method="POST">
                     <ul>
-                        <li>
-                            Tag Name: <input type="text" name="tagName">
-                        </li>
+                        <li th:each="tag : ${tags}"><a th:href="@{|/tags/${tag.id}|}" th:text="${tag.tagName}">Author</a></li>
                     </ul>
-                </form>
-            </div>
+                </div>
+                <div class="form">
+                    <form action="/tags" method="POST">
+                        <ul>
+                            <li>
+                                Tag Name: <input type="text" name="tagName">
+                            </li>
+                            <li>
+                                <button type="submit">Submit</button>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
 </body>
 </html>
