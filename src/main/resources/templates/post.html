@@ -27,6 +27,30 @@
             <li th:text="${tag.tagName}"></li>
         </ul>
     </div>
+    <div class="form">
+        <form th:action="@{|/posts/${post.id}|}" method="POST">
+            <ul>
+                <li>
+                    Add a Tag: 
+                    <input type="text" name="tagName">
+                </li>
+                <li>
+                    <button type="submit">Submit</button>
+                </li>
+            </ul>
+        </form>
+        <form th:action="@{|/posts/${post.id}|}" method="POST">
+            <ul>
+                <li>
+                    Add an Author: 
+                    <input type="text" name="authorName">
+                </li>
+                <li>
+                    <button type="submit">Submit</button>
+                </li>
+            </ul>
+        </form>
+    </div>
     <footer>
         <p>&copyBA Blogs 2019</p>
     </footer>

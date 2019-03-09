@@ -75,6 +75,14 @@ public class Post {
 		return "Post [id=" + id + ", title=" + title + ", body=" + body + ", authors=" + authors + ", genre=" + genre
 				+ ", tags=" + tags + "]";
 	}
+
+	public void addTagToTags(Tag tag) {
+		tags.add(tag);
+	}
+
+	public void addAuthorToAuthors(Author author) {
+		authors.add(author);
+	}
 	
 	
 }

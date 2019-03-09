@@ -1,6 +1,7 @@
 package com.wecancodeit.blogsite.controllers;
 
 import java.time.LocalDateTime;
+import java.util.Collection;
 
 import javax.annotation.Resource;
 
@@ -45,6 +46,13 @@ public class PostsController {
 	
 	@PostMapping ("/posts")
 	public String postSubmit(String title, String body, String authorName, String genreName, String tagName) {
+//		Collection<Tag> currentTags = null;
+//		String[] tagNames = tagName.split(",");
+//		for (String tag : tagNames) {
+//			 Tag tagToAdd = tags.findByTagName(tagName);
+//			 currentTags.add(tagToAdd);
+//		}
+		
 		LocalDateTime time = LocalDateTime.now();
 		Author author = authors.findByAuthorName(authorName);
 		Genre genre = genres.findByGenreName(genreName);

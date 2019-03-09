@@ -44,7 +44,7 @@
                             </li>
                             <li>
                                 Tags:
-                                <select type="text" name="tagName">
+                                <select multiple type="text" name="tagName">
                                     <option th:each="tag : ${tags}" th:value="${tag.tagName}" th:text="${tag.tagName}"></option>
                                 </select>
                             </li>

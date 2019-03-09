@@ -1,6 +1,7 @@
 package com.wecancodeit.blogsite;
 
 import java.time.LocalDateTime;
+import java.util.Collection;
 
 import javax.annotation.Resource;
 
@@ -42,7 +43,7 @@ public class Initializer implements CommandLineRunner {
 		Tag tag3 = tags.save(new Tag("Java"));
 		Tag tag4 = tags.save(new Tag("Spring"));
 		LocalDateTime time2 = LocalDateTime.now();
-		posts.save(new Post("SSR with Spring", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", time2, genre2, author2, tag3, tag4));
+		posts.save(new Post("SSR with Spring", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", time2, genre2, author2, tag1, tag2));
 	}
 
 }

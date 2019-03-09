@@ -10,12 +10,9 @@
 </head>
 <body>
         <header class="header">
-                <h1>Blog</h1>
-                <nav>
-                    <a href="/"><img src="/images/logo.png" alt="logo"></a>
-                    <p>All Genres</p>
-                </nav>
-            </header>    
+            <a href="/"><img src="/images/logo.png" alt="logo"></a>
+            <p>All Genres</p>
+        </header>    
             <div class="main-content">
                     <ul>
                         <li th:each="genre : ${genres}"><a th:href="@{|/genres/${genre.id}|}" th:text="${genre.genreName}">Author</a></li>
