@@ -19,7 +19,7 @@
                 </nav>
             </header>    
             <div class="main-content">
-                    <ul>
+                    <ul class="main-content_list">
                         <li th:each="genre : ${genres}"><a th:href="@{|/genres/${genre.id}|}" th:text="${genre.genreName}">Author</a></li>
                     </ul>
                 </div>
