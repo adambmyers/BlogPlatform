@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Author</title>
+    <title>Tag</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
 </head>
@@ -17,15 +17,15 @@
             </nav>
     </header>
     <div class="main-content">
-        <h1 th:text="${author.authorName}"></h1>
+        <h1 th:text="${tag.tagName}"></h1>
         <h2>Posts</h2>
-        <ul th:each="post : ${author.posts}">
+        <ul th:each="post : ${tag.posts}">
             <li th:text="${post.title}"></li>
-            <li th:text="${post.time}"></li>
-            <li th:text="${post.genre.genreName}"></li>
-            <div th:each="tag : ${post.tags}">
-                <li th:text="${tag.tagName}"></li>
+            <div th:each="author : ${post.authors}">
+                <li th:text="${author.authorName}"></li>
             </div>
+            <li th:text="${post.genre.genreName}"></li>
+            <li th:text="${post.time}"></li>
             <li th:text="${post.body}"></li>
         </ul>
     </div>

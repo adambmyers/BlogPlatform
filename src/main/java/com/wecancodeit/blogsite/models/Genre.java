@@ -31,6 +31,10 @@ public class Genre {
 	public String getGenreName() {
 		return genreName;
 	}
+	
+	public Collection<Post> getPosts() {
+		return posts;
+	}
 
 	@Override
 	public String toString() {

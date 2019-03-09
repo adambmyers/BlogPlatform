@@ -19,7 +19,7 @@ import com.wecancodeit.blogsite.repositories.PostRepository;
 import com.wecancodeit.blogsite.repositories.TagRepository;
 
 @Controller
-public class PostController {
+public class PostsController {
 	
 	@Resource
 	AuthorRepository authors;

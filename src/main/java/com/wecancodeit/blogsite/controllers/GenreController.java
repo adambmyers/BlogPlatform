@@ -7,18 +7,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.wecancodeit.blogsite.repositories.TagRepository;
+import com.wecancodeit.blogsite.repositories.GenreRepository;
 
 @Controller
-public class TagController {
+public class GenreController {
 	
 	@Resource
-	TagRepository tags;
+	GenreRepository genres;
 	
-	@GetMapping("/tags/{id}")
-	public String tag(@PathVariable Long id, Model model) {
-		model.addAttribute("tag", tags.findById(id).get());
-		return "tag";
+	@GetMapping("/genres/{id}")
+	public String genre(@PathVariable Long id, Model model) {
+		model.addAttribute("genre", genres.findById(id).get());
+		return "genre";
 	}
 	
 }

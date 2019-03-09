@@ -23,6 +23,10 @@ public class Tag {
 	public Tag(String tagName) {
 		this.tagName = tagName;
 	}
+	
+	public Collection<Post> getPosts() {
+		return posts;
+	}
 
 	public Long getId() {
 		return id;

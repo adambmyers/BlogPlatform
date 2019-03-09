@@ -33,20 +33,20 @@
                             </li>
                             <li>
                                 Author:
-                                <select>
-                                    <option th:each="author : ${authors}" th:value="${author.authorName}" th:name="${author.authorName}" th:text="${author.authorName}"></option>
+                                <select type="text" name="authorName">
+                                    <option th:each="author : ${authors}" th:value="${author.authorName}" th:text="${author.authorName}"></option>
                                 </select>
                             </li>
                             <li>
                                 Genre:
-                                <select>
-                                    <option th:each="genre : ${genres}" th:value="${genre.genreName}" th:name="${genre.genreName}" th:text="${genre.genreName}"></option>
+                                <select type="text" name="genreName">
+                                    <option th:each="genre : ${genres}" th:value="${genre.genreName}" th:text="${genre.genreName}"></option>
                                 </select>
                             </li>
                             <li>
                                 Tags:
-                                <select>
-                                    <option th:each="tag : ${tags}" th:value="${tag.tagName}" th:name="${tag.tagName}" th:text="${tag.tagName}"></option>
+                                <select type="text" name="tagName">
+                                    <option th:each="tag : ${tags}" th:value="${tag.tagName}" th:text="${tag.tagName}"></option>
                                 </select>
                             </li>
                             <li>
