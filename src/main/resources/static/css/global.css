@@ -19,7 +19,7 @@ h3 {
 body {
     background-color: rgb(246, 248, 213);
     height: 100%;
-    margin-top: 100px; 
+    margin-top: 120px; 
 }
 p {
     font-family: sans-serif;
@@ -44,7 +44,7 @@ li {
     justify-content: space-between;
     padding: 1.2rem;
     margin-bottom: 3rem;
-    height: 50px;
+    height: 60px;
 }
 
 .footer {
@@ -58,9 +58,14 @@ li {
     background-color: black;
     opacity: .7;
     text-align: center;
-    
-   
+    height: 30px;
 }
+
+.footer p {
+    font-size: 10px;
+    padding: 10px;
+}
+
 .logo {
     height: 4rem;
    width: 4rem;
@@ -68,4 +73,38 @@ li {
    margin-top: 1%;
    margin-bottom: 1%;
    
+}
+
+.main-content_list {
+    text-align: center;
+    font-size: 1.75rem;
+}
+
+.main-content_list li {
+    padding: 5px;
+}
+
+.form {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-top: 15px;
+}
+
+input[type=text] {
+    width: 30%;
+    border: 2px solid rgb(0, 0, 0, 0.7);
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+button {
+    text-decoration: none;
+    background-color: rgb(0, 0, 0, 0.4);
+    font-size: 20px;
+    font: rgb(0, 0, 0, 0.8);
+    padding: 7px 24px;
+    border-radius: 8px;
 }

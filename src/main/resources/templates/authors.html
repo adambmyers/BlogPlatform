@@ -12,20 +12,20 @@
         <header class="header">
                 <h1>Blog</h1>
                 <nav>
-                    <a href="/"><img src="/images/logo.png" alt="logo"></a>
-                    <p>All Authors</p>
+                    <a href="/"><img src="/images/logo.png" class="logo" alt="logo"></a>
                 </nav>
         </header>    
         <div class="main-content">
-            <ul>
+            <ul class="main-content_list">
                 <li th:each="author : ${authors}"><a th:href="@{|/authors/${author.id}|}" th:text="${author.authorName}">Author</a></li>
             </ul>
         </div>
         <div class="form">
             <form action="/authors" method="POST">
+                Submit an Author
                 <ul>
                     <li>
-                        Author Name: <input type="text" name="authorName">
+                        <input type="text" name="authorName" placeholder="Author Name">
                     </li>
                     <li>
                         <button type="submit">Submit</button>

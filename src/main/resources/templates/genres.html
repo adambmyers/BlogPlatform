@@ -12,29 +12,29 @@
         <header class="header">
                 <h1>All Genres</h1>
                 <nav>
-                    
                     <a href="/"><img src="/images/logo.png" class="logo" alt="logo"></a>
-                    
-                    <p>All Genres</p>
                 </nav>
             </header>    
             <div class="main-content">
-                    <ul>
+                    
+                    <ul class="main-content_list">
                         <li th:each="genre : ${genres}"><a th:href="@{|/genres/${genre.id}|}" th:text="${genre.genreName}">Author</a></li>
                     </ul>
-                </div>
+                
                 <div class="form">
                     <form action="/genres" method="POST">
+                        Submit a Genre!
                         <ul>
                             <li>
-                                Genre Name: <input type="text" name="genreName">
+                                <input type="text" name="genreName" placeholder="Genre Name">
                             </li>
                             <li>
                                 <button type="submit">Submit</button>
                             </li>
                         </ul>
                     </form>
-                </div>              
+                </div>  
+            </div>            
 </body>
 <footer class="footer">
     <p>&copyBA Blogs 2019</p>
