@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Tags</title>
+    <title>Genres</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
 </head>
@@ -18,14 +18,23 @@
             </header>    
             <div class="main-content">
                     <ul>
-                        <li th:each="tag : ${tags}"><a th:href="@{|/tags/${tag.id}|}" th:text="${tag.tagName}">Author</a></li>
+                        <li th:each="post : ${posts}"><a th:href="@{|/posts/${post.id}|}" th:text="${post.title}">Author</a></li>
                     </ul>
                 </div>
                 <div class="form">
-                    <form action="/tags" method="POST">
+                    <form action="/posts" method="POST">
                         <ul>
                             <li>
-                                Tag Name: <input type="text" name="tagName">
+                                Title: <input type="text" name="title">
+                            </li>
+                            <li>
+                                Body: <input type="text" name="body">
+                            </li>
+                            <li>
+                                Author:
+                                <select>
+                                    <option th:value="${author.authorName}" th:each="author : ${authors}" th:name="${author.authorName}"></option>
+                                </select>
                             </li>
                             <li>
                                 <button type="submit">Submit</button>
