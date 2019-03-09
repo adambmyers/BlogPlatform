@@ -1,11 +1,18 @@
 package com.wecancodeit.blogsite.controllers;
 
+import java.time.LocalDateTime;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
+import com.wecancodeit.blogsite.models.Author;
+import com.wecancodeit.blogsite.models.Genre;
+import com.wecancodeit.blogsite.models.Post;
+import com.wecancodeit.blogsite.models.Tag;
 import com.wecancodeit.blogsite.repositories.AuthorRepository;
 import com.wecancodeit.blogsite.repositories.GenreRepository;
 import com.wecancodeit.blogsite.repositories.PostRepository;
@@ -35,5 +42,14 @@ public class PostController {
 		model.addAttribute("tags", tags.findAll());
 		return "posts";
 	}
-
+	
+	@PostMapping ("/posts")
+	public String postSubmit(String title, String body, String authorName, String genreName, String tagName) {
+		LocalDateTime time = LocalDateTime.now();
+		Author author = authors.findByAuthorName(authorName);
+		Genre genre = genres.findByGenreName(genreName);
+		Tag tag = tags.findByTagName(tagName);
+		posts.save(new Post(title, body, time, genre, author, tag));
+		return "redirect:/posts";	
+	}
 }

@@ -17,8 +17,9 @@
                 </nav>
             </header>    
             <div class="main-content">
-                    <ul>
-                        <li th:each="post : ${posts}"><a th:href="@{|/posts/${post.id}|}" th:text="${post.title}">Author</a></li>
+                    <ul th:each="post : ${posts}">
+                        <li ><a th:href="@{|/posts/${post.id}|}" th:text="${post.title}">Author</a></li>
+                        <!-- this is how we print the time <li th:text="${post.time}"></li> -->
                     </ul>
                 </div>
                 <div class="form">
@@ -33,7 +34,19 @@
                             <li>
                                 Author:
                                 <select>
-                                    <option th:value="${author.authorName}" th:each="author : ${authors}" th:name="${author.authorName}"></option>
+                                    <option th:each="author : ${authors}" th:value="${author.authorName}" th:name="${author.authorName}" th:text="${author.authorName}"></option>
+                                </select>
+                            </li>
+                            <li>
+                                Genre:
+                                <select>
+                                    <option th:each="genre : ${genres}" th:value="${genre.genreName}" th:name="${genre.genreName}" th:text="${genre.genreName}"></option>
+                                </select>
+                            </li>
+                            <li>
+                                Tags:
+                                <select>
+                                    <option th:each="tag : ${tags}" th:value="${tag.tagName}" th:name="${tag.tagName}" th:text="${tag.tagName}"></option>
                                 </select>
                             </li>
                             <li>

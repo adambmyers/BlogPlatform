@@ -8,4 +8,6 @@ import com.wecancodeit.blogsite.models.Genre;
 @Repository
 public interface GenreRepository extends CrudRepository<Genre, Long>{
 
+	Genre findByGenreName(String genreName);
+
 }

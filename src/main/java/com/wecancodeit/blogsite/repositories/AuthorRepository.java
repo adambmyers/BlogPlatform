@@ -8,4 +8,6 @@ import com.wecancodeit.blogsite.models.Author;
 @Repository
 public interface AuthorRepository extends CrudRepository<Author, Long> {
 
+	Author findByAuthorName(String authorName);
+
 }

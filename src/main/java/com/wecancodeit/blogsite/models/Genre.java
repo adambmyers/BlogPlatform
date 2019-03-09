@@ -15,7 +15,7 @@ public class Genre {
 	private Long id;
 	private String genreName;
 	
-	@OneToMany
+	@OneToMany(mappedBy="genre")
 	private Collection<Post> posts;
 	
 	public Genre() {}

@@ -15,13 +15,17 @@ public class Author {
 	private Long id;
 	private String authorName;
 	
-	@ManyToMany
+	@ManyToMany (mappedBy="authors")
 	private Collection<Post> posts;
 	
 	public Author() {}
 	
 	public Author(String authorName) {
 		this.authorName = authorName;
+	}
+	
+	public Collection<Post> getPosts() {
+		return posts;
 	}
 
 	public Long getId() {
