@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Genre</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Genres</title>
+        <link rel="stylesheet" type="text/css" href="/css/global.css">
+        <link rel="stylesheet" type="text/css" href="/css/post.css"> 
 </head>
 <body>
     <header class="header">
@@ -27,6 +28,7 @@
             <li th:text="${tag.tagName}"></li>
         </ul>
     </div>
+<<<<<<< HEAD
     <div class="form">
         <form th:action="@{|/posts/${post.id}|}" method="POST">
             <ul>
@@ -54,5 +56,10 @@
     <footer>
         <p>&copyBA Blogs 2019</p>
     </footer>
+=======
+>>>>>>> 8eabd012de1f58fd6a209f94f0dd3d94f5c71e00
 </body>
+<footer class="footer">
+        <p>&copyBA Blogs 2019</p>
+</footer>
 </html>
