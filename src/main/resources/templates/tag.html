@@ -14,6 +14,7 @@
                 <ul>
                     <a href="/"><li>Home</li></a>
                 </ul>
+                <p th:text="${tag.tagName}"></p>
             </nav>
     </header>
     <div class="main-content">
@@ -29,5 +30,8 @@
             <li th:text="${post.body}"></li>
         </ul>
     </div>
+    <footer>
+        <p>&copyBA Blogs 2019</p>
+    </footer>
 </body>
 </html>
