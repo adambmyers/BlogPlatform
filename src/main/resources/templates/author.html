@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Genres</title>
+        <link rel="stylesheet" type="text/css" href="/css/global.css">
+        <link rel="stylesheet" type="text/css" href="/css/author.css"> 
+</head>
+<body>
+    <header class="header">
+        <h1>Blog</h1>
+            <nav>
+                <a href="/"><img src="/images/logo.png" class="logo" alt="logo"></a>
+            </nav>
+    </header>
+    <div class="main-content">
+        <h1 th:text="${author.authorName}"></h1>
+        <h2 th:text="${author.authorName}"></h2>
+        <article class="posts-blogpost" th:each="post : ${author.posts}">
+            <ul>
+                <li th:text="${post.title}"></li>
+                <li th:text="${post.time}"></li>
+                <li th:text="${post.genre.genreName}"></li>
+                <div th:each="tag : ${post.tags}">
+                    <li th:text="${tag.tagName}"></li>
+                </div>
+                <li th:text="${post.body}"></li>
+            </ul>
+        </article>
+    </div>
+</body>
+<footer class="footer">
+    <p>&copyBA Blogs 2019</p>
+</footer>
+</html>

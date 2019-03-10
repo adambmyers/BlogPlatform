@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Genres</title>
+        <link rel="stylesheet" type="text/css" href="/css/global.css">
+        <link rel="stylesheet" type="text/css" href="/css/posts.css"> 
+</head>
+<body>
+        <header class="header">
+                <h1>Blog</h1>
+                <nav>
+                        <a href="/"><img src="/images/logo.png" class="logo" alt="logo"></a>
+                </nav>
+            </header>    
+            <div class="main-content">
+                    <ul class="main-content_list">
+                        <li th:each="post : ${posts}"><a th:href="@{|/posts/${post.id}|}" th:text="${post.title}">Author</a></li>
+                        <!-- this is how we print the time <li th:text="${post.time}"></li> -->
+                    </ul>
+                </div>
+                <div class="form">
+                    <form action="/posts" method="POST">
+                        <ul>
+                            <li>
+                                <input type="text" name="title" placeholder="Blog Title">
+                            </li>
+                            <li>
+                                <input type="text" name="body" placeholder="Your Rant Here!">
+                            </li>
+                            <li>
+                               
+                                <select type="text" name="authorName">
+                                    <option value="" disabled selected>Author</option>
+                                    <option th:each="author : ${authors}" th:value="${author.authorName}" th:text="${author.authorName}"></option>
+                                </select>
+                            </li>
+                            <li>
+    
+                                    <select type="text" name="genreName">
+                                        <option value="" disabled selected>Genre</option>
+                                        <option th:each="genre : ${genres}" th:value="${genre.genreName}" th:text="${genre.genreName}" placeholder="Genre"></option>
+                                    </select>
+                            </li>
+                            <li>
+                             
+                                <select type="text" name="tagName">
+                                    <option value="" disabled selected>Tag</option>
+                                    <option th:each="tag : ${tags}" th:value="${tag.tagName}" th:text="${tag.tagName}"></option>
+                                </select>
+                            </li>
+                            <li>
+                                <button type="submit">Submit</button>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+</body>
+<footer class="footer">
+        <p>&copyBA Blogs 2019</p>
+</footer>
+</html>
