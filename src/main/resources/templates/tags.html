@@ -13,19 +13,19 @@
                 <h1>Blog</h1>
                 <nav>
                         <a href="/"><img src="/images/logo.png" class="logo" alt="logo"></a>
-                    <p>All Tags</p>
                 </nav>
             </header>    
             <div class="main-content">
-                    <ul>
+                    <ul class="main-content_list">
                         <li th:each="tag : ${tags}"><a th:href="@{|/tags/${tag.id}|}" th:text="${tag.tagName}">Author</a></li>
                     </ul>
                 </div>
                 <div class="form">
                     <form action="/tags" method="POST">
+                        Submit a Tag!
                         <ul>
                             <li>
-                                Tag Name: <input type="text" name="tagName">
+                                <input type="text" name="tagName" placeholder="Tag Name">
                             </li>
                             <li>
                                 <button type="submit">Submit</button>

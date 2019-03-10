@@ -18,7 +18,7 @@ public class Post {
 	@GeneratedValue
 	private Long id;
 	private String title;
-	private LocalDateTime time;
+	private String time;
 	@Lob
 	private String body;
 	
@@ -33,11 +33,11 @@ public class Post {
 
 	public Post() {}
 	
-	public Post(String title, String body, LocalDateTime time, Genre genre, Author author, Tag ...tags) {
+	public Post(String title, String body, String formatDateTime, Genre genre, Author author, Tag ...tags) {
 		this.title = title;
 		this.body = body;
 		this.genre = genre;
-		this.time = time;
+		this.time = formatDateTime;
 		this.authors = Arrays.asList(author);
 		this.tags = Arrays.asList(tags);
 	}
@@ -54,7 +54,7 @@ public class Post {
 		return body;
 	}
 	
-	public LocalDateTime getTime() {
+	public String getTime() {
 		return time;
 	}
 

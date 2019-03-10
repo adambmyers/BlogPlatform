@@ -12,29 +12,28 @@
     <header class="header">
         <h1>Blog</h1>
             <nav>
-                    <a href="/"><img src="/images/logo.png" class="logo" alt="logo"></a>
-                <p th:text="${post.title}"></p>
+                <a href="/"><img src="/images/logo.png" class="logo" alt="logo"></a>
             </nav>
     </header>
     <div class="main-content">
-        <h1 th:text="${post.title}"></h1>
-        <div th:each="author : ${post.authors}">
-            <h2 th:text="${author.authorName}"></h2>
-        </div>
-        <h3 th:text="${post.genre.genreName}"></h3>
-        <h3 th:text="${post.time}"></h3>
-        <p th:text="${post.body}"></p>
-        <ul th:each="tag : ${post.tags}">
-            <li th:text="${tag.tagName}"></li>
-        </ul>
+        <article class="posts-blogpost">
+            <h2 th:text="${post.title}"></h2>
+            <div th:each="author : ${post.authors}">
+                <h2 th:text="${author.authorName}"></h2>
+            </div>
+            <h3 th:text="${post.genre.genreName}"></h3>
+            <h3 th:text="${post.time}"></h3>
+            <p th:text="${post.body}"></p>
+            <ul th:each="tag : ${post.tags}">
+                <li th:text="${tag.tagName}"></li>
+            </ul>
+        </article>
     </div>
-<<<<<<< HEAD
     <div class="form">
         <form th:action="@{|/posts/${post.id}|}" method="POST">
             <ul>
                 <li>
-                    Add a Tag: 
-                    <input type="text" name="tagName">
+                    <input type="text" name="tagName" placeholder="Tag Name">
                 </li>
                 <li>
                     <button type="submit">Submit</button>
@@ -43,9 +42,8 @@
         </form>
         <form th:action="@{|/posts/${post.id}|}" method="POST">
             <ul>
-                <li>
-                    Add an Author: 
-                    <input type="text" name="authorName">
+                <li> 
+                    <input type="text" name="authorName" placeholder="Author Name">
                 </li>
                 <li>
                     <button type="submit">Submit</button>
@@ -53,11 +51,6 @@
             </ul>
         </form>
     </div>
-    <footer>
-        <p>&copyBA Blogs 2019</p>
-    </footer>
-=======
->>>>>>> 8eabd012de1f58fd6a209f94f0dd3d94f5c71e00
 </body>
 <footer class="footer">
         <p>&copyBA Blogs 2019</p>

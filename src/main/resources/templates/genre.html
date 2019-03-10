@@ -15,23 +15,24 @@
                 
                 <a href="/"><img src="/images/logo.png" class="logo" alt="logo"></a>
                
-                <p th:text="${genre.genreName}"></p>
+                
             </nav>
     </header>
     <div class="main-content">
-        <h1 th:text="${genre.genreName}"></h1>
-        <h2>Posts</h2>
-        <ul th:each="post : ${genre.posts}">
-            <li th:text="${post.title}"></li>
-            <div th:each="author : ${post.authors}">
-                <li th:text="${author.authorName}"></li>
-            </div>
-            <li th:text="${post.time}"></li>
-            <div th:each="tag : ${post.tags}">
-                <li th:text="${tag.tagName}"></li>
-            </div>
-            <li th:text="${post.body}"></li>
-        </ul>
+        <h2 th:text="${genre.genreName}"></h2>
+        <article class="posts-blogpost" th:each="post : ${genre.posts}">
+            <ul>
+                <li th:text="${post.title}"></li>
+                <div th:each="author : ${post.authors}">
+                    <li th:text="${author.authorName}"></li>
+                </div>
+                <li th:text="${post.time}"></li>
+                <div th:each="tag : ${post.tags}">
+                    <li th:text="${tag.tagName}"></li>
+                </div>
+                <li th:text="${post.body}"></li>
+            </ul>
+        </article>
     </div>  
 </body>
 <footer class="footer">

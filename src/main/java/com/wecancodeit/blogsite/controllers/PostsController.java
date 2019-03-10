@@ -1,6 +1,7 @@
 package com.wecancodeit.blogsite.controllers;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 
 import javax.annotation.Resource;
@@ -53,7 +54,10 @@ public class PostsController {
 //			 currentTags.add(tagToAdd);
 //		}
 		
-		LocalDateTime time = LocalDateTime.now();
+		LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String time = now.format(formatter);
+
 		Author author = authors.findByAuthorName(authorName);
 		Genre genre = genres.findByGenreName(genreName);
 		Tag tag = tags.findByTagName(tagName);

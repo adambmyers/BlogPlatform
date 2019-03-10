@@ -16,15 +16,15 @@
         </nav>
     </header>    
     <div class="main-content">
-        <ul>
-            <li><a href="/authors">Authors</a></li>
-            <li><a href="/genres">Genres</a></li>
-            <li><a href="/tags">Tags</a></li>
-            <li><a href="/posts">Posts</a></li>
+        <ul class="main-content_list">
+            <li><a href="/authors">Search by Post Authors</a></li>
+            <li><a href="/genres">Search by Genres</a></li>
+            <li><a href="/tags">Search by Tags</a></li>
+            <li><a href="/posts">Search All Posts</a></li>
         </ul>
     </div>
     <div class="posts">
-        <article th:each="post : ${posts}">
+        <article class="posts-blogpost" th:each="post : ${posts}">
             <ul>
                 <li th:text="${post.title}"></li>
                 <div th:each="author : ${post.authors}">

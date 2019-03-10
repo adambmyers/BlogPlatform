@@ -13,12 +13,11 @@
                 <h1>Blog</h1>
                 <nav>
                         <a href="/"><img src="/images/logo.png" class="logo" alt="logo"></a>
-                    <p>All Posts</p>
                 </nav>
             </header>    
             <div class="main-content">
-                    <ul th:each="post : ${posts}">
-                        <li ><a th:href="@{|/posts/${post.id}|}" th:text="${post.title}">Author</a></li>
+                    <ul class="main-content_list">
+                        <li th:each="post : ${posts}"><a th:href="@{|/posts/${post.id}|}" th:text="${post.title}">Author</a></li>
                         <!-- this is how we print the time <li th:text="${post.time}"></li> -->
                     </ul>
                 </div>
@@ -26,26 +25,29 @@
                     <form action="/posts" method="POST">
                         <ul>
                             <li>
-                                Title: <input type="text" name="title">
+                                <input type="text" name="title" placeholder="Blog Title">
                             </li>
                             <li>
-                                Body: <input type="text" name="body">
+                                <input type="text" name="body" placeholder="Your Rant Here!">
                             </li>
                             <li>
-                                Author:
+                               
                                 <select type="text" name="authorName">
+                                    <option value="" disabled selected>Author</option>
                                     <option th:each="author : ${authors}" th:value="${author.authorName}" th:text="${author.authorName}"></option>
                                 </select>
                             </li>
                             <li>
-                                Genre:
-                                <select type="text" name="genreName">
-                                    <option th:each="genre : ${genres}" th:value="${genre.genreName}" th:text="${genre.genreName}"></option>
-                                </select>
+    
+                                    <select type="text" name="genreName">
+                                        <option value="" disabled selected>Genre</option>
+                                        <option th:each="genre : ${genres}" th:value="${genre.genreName}" th:text="${genre.genreName}" placeholder="Genre"></option>
+                                    </select>
                             </li>
                             <li>
-                                Tags:
-                                <select multiple type="text" name="tagName">
+                             
+                                <select type="text" name="tagName">
+                                    <option value="" disabled selected>Tag</option>
                                     <option th:each="tag : ${tags}" th:value="${tag.tagName}" th:text="${tag.tagName}"></option>
                                 </select>
                             </li>
