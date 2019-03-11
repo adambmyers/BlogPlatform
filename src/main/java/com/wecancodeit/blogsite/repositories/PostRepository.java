@@ -8,4 +8,6 @@ import com.wecancodeit.blogsite.models.Post;
 @Repository
 public interface PostRepository extends CrudRepository<Post, Long> {
 
+	Post findByTitle(String title);
+
 }
